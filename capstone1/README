@@ -1,0 +1,13 @@
+flat-file inputs that are needed for the data story notebook:
+  activity
+  dividend yield
+  FI
+  growth and value
+  inflation
+  manufacturing
+  money supply
+
+no need to prep/wrangle any of the inputs prior to running the notebook
+
+one flat file is exported after running the notebook:
+  DF
