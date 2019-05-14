@@ -1,13 +1,24 @@
-flat-file inputs that are needed for the data story notebook:
-  activity
-  dividend yield
-  FI
-  growth and value
-  inflation
-  manufacturing
-  money supply
+5/12/2019
 
-no need to prep/wrangle any of the inputs prior to running the notebook
+uploaded files pertaining to the data story: jupyter notebook and .CSV input files
 
-one flat file is exported after running the notebook:
-  DF
+  flat-file inputs that are needed for the data story notebook:
+    activity
+    dividend yield
+    FI
+    growth and value
+    inflation
+    manufacturing
+    money supply
+
+  no need to prep/wrangle any of the inputs prior to running the notebook
+
+  one flat file is exported after running the notebook:
+    DF
+
+#####################################################################################################################
+#####################################################################################################################
+
+5/14/2019
+
+uploaded Word document for EDA
