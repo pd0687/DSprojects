@@ -74,8 +74,8 @@ JOIN Members Mb
 ON Bk.memid = Mb.memid
 WHERE Bk.starttime IN 
 	(SELECT starttime
-     FROM Bookings Bk
-     WHERE starttime LIKE '2012-09-14%')
+     		FROM Bookings Bk
+     		WHERE starttime LIKE '2012-09-14%')
 AND CASE WHEN Bk.memid = 0 THEN
 	Fa.guestcost * Bk.slots > 30
 	ELSE Fa.membercost * Bk.slots > 30 END
