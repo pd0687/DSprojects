@@ -1,1 +1,92 @@
+5.3 Working with Data in Databases
 
+Project: SQL Practice
+
+One input file: 1520094343_sql_project.sql
+  the input file can be opened using Notepad
+
+######################################################################################################
+
+Code answers for all 10 questions (these are also contained in the file):
+
+1.
+SELECT name FROM Facilities
+WHERE membercost > 0
+
+2.
+SELECT COUNT(*) AS no_fee_facility FROM Facilities
+WHERE membercost = 0
+
+3.
+SELECT facid, name, membercost, monthlymaintenance FROM Facilities
+WHERE membercost > 0 AND membercost < 0.2 * monthlymaintenance
+
+4.
+SELECT * FROM Facilities
+WHERE facid IN (1, 5)
+
+5.
+SELECT name,
+	monthlymaintenance,
+	CASE WHEN monthlymaintenance > 100
+	THEN 'expensive'
+	ELSE 'cheap' END AS cheap_or_expensive
+	FROM Facilities
+
+6.
+SELECT surname, firstname, joindate FROM Members
+ORDER BY joindate DESC
+
+7.
+SELECT DISTINCT Mb.memid, CONCAT(Mb.firstname, ' ', Mb.surname) AS member_name, Fa.facid, Fa.name
+FROM Members Mb
+JOIN Bookings Bk
+ON Mb.memid = Bk.memid
+JOIN Facilities Fa
+ON Fa.facid = Bk.facid
+WHERE Fa.facid IN (0, 1)
+AND Mb.firstname != 'GUEST'
+AND Mb.surname != 'GUEST'
+ORDER BY member_name
+
+8.
+SELECT Fa.name, CONCAT(Mb.firstname, ' ', Mb.surname) AS member_name,
+	CASE WHEN Bk.memid = 0 THEN Fa.guestcost * Bk.slots
+	ELSE Fa.membercost * Bk.slots END AS cost
+FROM Facilities Fa
+JOIN Bookings Bk
+ON Fa.facid = Bk.facid
+JOIN Members Mb
+ON Bk.memid = Mb.memid
+WHERE (Bk.starttime LIKE '2012-09-14%')
+AND CASE WHEN Bk.memid = 0 THEN Fa.guestcost * Bk.slots > 30
+	ELSE Fa.membercost * Bk.slots > 30 END
+ORDER BY cost DESC
+
+9.
+SELECT Fa.name, CONCAT(Mb.firstname, ' ', Mb.surname) AS member_name,
+	CASE WHEN Bk.memid = 0 THEN Fa.guestcost * Bk.slots
+	ELSE Fa.membercost * Bk.slots END AS cost
+FROM Facilities Fa
+JOIN Bookings Bk
+ON Fa.facid = Bk.facid
+JOIN Members Mb
+ON Bk.memid = Mb.memid
+WHERE Bk.starttime IN 
+	(SELECT starttime
+     FROM Bookings Bk
+     WHERE starttime LIKE '2012-09-14%')
+AND CASE WHEN Bk.memid = 0 THEN
+	Fa.guestcost * Bk.slots > 30
+	ELSE Fa.membercost * Bk.slots > 30 END
+ORDER BY cost DESC
+
+10.
+SELECT Fa.name,
+	SUM(CASE WHEN Bk.memid = 0 THEN Bk.slots * Fa.guestcost
+	ELSE Bk.slots * Fa.membercost END) AS facility_revenue
+FROM Facilities Fa
+JOIN Bookings Bk
+ON Fa.facid = Bk.facid
+GROUP BY Fa.name
+ORDER BY facility_revenue
