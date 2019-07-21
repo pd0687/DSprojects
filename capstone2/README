@@ -24,10 +24,14 @@ Approach:
 
 Final results: pending
 
+
+
 ###################################################################################################################################
 ###################################################################################################################################
 ###################################################################################################################################
 ###################################################################################################################################
+
+
 
 Chronology of submissions
 
@@ -51,12 +55,40 @@ submitted Capstone Project 2 -- Milestone Report 1
 
 re-submitted EDA notebook
 
+
+
 ###################################################################################################################################
 ###################################################################################################################################
 ###################################################################################################################################
 ###################################################################################################################################
 
+
+
 Contents of each submission:
+
+Capstone Project 2 -- Initial Project Ideas Word document:
+
+-- three project proposals:
+---- stock selection using fundamental data (classification)
+---- market timing using financial instruments' historical time series (PCA)
+---- portfolio replication using a subset of instruments from the portfolio (clustering)
+
+Capstone Project 2 -- Project Proposal Word document:
+
+-- stock selection using fundamental data
+-- implement supervised classification algorithms to distinguish future winners from future losers using accounting data and
+   historical time series
+-- implement ensemble techniques such as voting classifier, bagging, and boosting
+-- hyperparameter-tune the underlying models in order to improve performance
+-- performance is measured by accuracy (i.e., predict a winning stock and it does outperform, or predict a losing stock and it
+   does underperform)
+   
+Capstone Project 2 -- Milestone Report 1 PDF:
+
+-- status update
+---- project objective
+---- description of the dataset and how it was obtained, cleaned, and wrangled
+---- initial findings from EDA
 
 data wrangling notebook:
 
