@@ -62,6 +62,7 @@ re-submitted EDA notebook
 added information in the README regarding objective and approach of the project and the contents of each submission
 submitted ML notebook
 submitted CSV files that serve as dependencies for the data wrangling, EDA, and ML notebooks, respectively
+submitted Capstone Project 2 -- Milestone Report 2
 
 
 
@@ -97,6 +98,11 @@ Capstone Project 2 -- Milestone Report 1 PDF:
 ---- project objective
 ---- description of the dataset and how it was obtained, cleaned, and wrangled
 ---- initial findings from EDA
+
+Capstone Project 2 -- Milestone Report 2 Word document:
+
+-- status update
+---- findings from the machine learning phase
 
 data wrangling notebook:
 
