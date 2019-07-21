@@ -17,3 +17,33 @@ submitted Capstone Project 2 -- Milestone Report 1
 7/20/2019
 
 re-submitted EDA notebook
+
+
+
+Contents of each submission:
+
+data wrangling notebook:
+
+-- Delete unnecessary columns after the CSV was imported as a dataframe
+-- Check data types, and coerce the target to float
+-- Verify that the dates are all end-of-month
+-- Check to see how many nulls there are in each of the features and the target, check how many rows are free of nulls, and
+   drop rows containing any nulls
+-- Engineer new feature
+-- Check if NaN in the new feature, and coerce NaN's to zero
+-- Check if infinity entries in the new feature, and coerce to 9999
+-- Rearrange/swap the last two columns so that the target is rightmost
+-- Delete the feature that was used for engineering the new feature
+-- Create function that groups by date and discretizes the (continuous) features into 5 quantiles
+-- Create function that discretizes the target -- 1 if the next month's return lies above the median, 0 otherwise
+
+EDA notebook:
+
+-- Group the observations by date and compute the mean for all continuous features, then plot the grouped mean for each feature
+-- Correlation matrix and heatmap for the continuous features for the ungrouped and the grouped (as above) dataframe
+-- Simple linear regression where the continuous target is regressed on each of the continuous features
+-- Histograms, skewness, and kurtosis for each of the continuous features and for the continuous target
+-- Confidence intervals for each of the continuous features and for the continuous target
+-- Subset the discrete target into "underperform" and "outperform," compute each observation's features' quantile average,
+   then perform the difference of means test to see if outperforming stocks have features that belong to quantiles that are
+   higher than those for underperforming stocks
