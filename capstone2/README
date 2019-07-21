@@ -122,3 +122,19 @@ EDA notebook:
 -- Subset the discrete target into "underperform" and "outperform," compute each observation's features' quantile average,
    then perform the difference of means test to see if outperforming stocks have features that belong to quantiles that are
    higher than those for underperforming stocks
+
+ML notebook:
+
+-- Loop through each of the dates, train and test, and report accuracy for each of the logistic regression, K-nearest neighbors,
+   and random forest classifiers, with default hyperparameters
+-- Plot each of the resulting accuracy curves over time
+-- Sanity-check the test set accuracy by reiterating the first pass, but this time implementing ten-fold cross validation on
+   the training set and comparing the accuracies between the validation and test sets
+-- Implement ensemble models: voting classifier (using all three untuned models), bagging (using the untuned random forest
+   classifier), and AdaBoost (using the untuned random forest classifier)
+-- Tune the key hyperparameters for each of the three models by calling GridSearchCV with ten-fold CV over the first 25 months
+   of data
+-- Loop through the remaining N - 25 months (from January 1997 to July 2015) using the now-tuned logistic regression, KNN, and
+   random forest classifiers, and report the accuracies
+-- Over the same N - 25 months, re-run the voting classifier, bagging, and AdaBoost classifiers and report the accuracies
+-- Compare and graph the accuracies between the tuned and untuned models
