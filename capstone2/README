@@ -1,3 +1,36 @@
+Objective: stock selection using machine learning classification algorithms, enhancing selection of each individual model via
+voting classifier, bagging, and boosting, and then enhancing each model and ensemble by hyperparameter tuning at the model level
+
+Approach:
+
+-- each step below uses models' default hyperparameters, the observations are split 75/25 via train-test-split at each month
+   from beginning (December 1994) to end (July 2015), and performance (i.e., accuracy) is logged by looping over each month
+
+---- implement logsitic regression, k-nearest neighbors, and random forest classifiers using default hyperparameters and 75/25
+     train-test-split
+---- re-implement all three using default hyperparameters and 75/25 t-t-s, additionally performing ten-fold cross validation
+     on the training set and gauging whether the validation set accuracy is in line with the test set accuracy
+---- aggregate the results of all three models into a voting classifier using default hyperparameters and 75/25 t-t-s
+---- implement a bagging classifier using the random forest as the base estimator and test each realization on out-of-bag
+     observations
+---- implement AdaBoost classifier using the random forest as the base estimator and test each realization on out-of-bag
+     observations
+
+-- hyperparameter-tune each of the logistic regression, k-nearest neighbors, and random forest classifiers by implementing
+   GridSearchCV and performing ten-fold cross validation on the period from December 1994 to December 1996
+   
+-- over the period from January 1997 to July 2015, and again using 75/25 t-t-s, re-run as before and check if accuracy and/or
+   variance have improved
+
+Final results: pending
+
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
+
+Chronology of submissions
+
 7/9/2019
 
 created capstone2 folder
@@ -18,7 +51,10 @@ submitted Capstone Project 2 -- Milestone Report 1
 
 re-submitted EDA notebook
 
-
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
+###################################################################################################################################
 
 Contents of each submission:
 
