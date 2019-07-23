@@ -22,8 +22,14 @@ Approach:
 -- over the period from January 1997 to July 2015, and again using 75/25 t-t-s, re-run as before and check if accuracy and/or
    variance have improved
 
-Final results: pending
+Final results:
 
+-- regardless of the model, accuracy was positively correlated with monthly constituent count (anywhere from 0.20 to 0.39)
+-- the untuned base estimators and ensemble models attained an accuracy of greater than 55%
+-- tuning the base estimators' hyperparameters led to an improvement in accuracy of about 1 to 2% for most models with a modest
+   increase in variance of accuracy
+-- the voting classifier using the tuned base estimators witnessed the most accurate predictions, at greater than 59%
+-- the random forest classifier witnessed the greatest improvement, about 2.5%, in accuracy due to hyperparameter tuning
 
 
 ###################################################################################################################################
@@ -70,6 +76,13 @@ submitted Capstone Project 2 -- Milestone Report 2
 
 submitted Capstone Project 2 -- Final Write-Up
 
+###########################################################################################################
+
+7/23/2019
+
+submitted Capstone Project 2 -- Final Slide Deck
+added information in the README regarding final results
+
 
 
 ###################################################################################################################################
@@ -81,12 +94,14 @@ submitted Capstone Project 2 -- Final Write-Up
 
 Contents of each submission:
 
+
 Capstone Project 2 -- Initial Project Ideas Word document:
 
 -- three project proposals:
 ---- stock selection using fundamental data (classification)
 ---- market timing using financial instruments' historical time series (PCA)
 ---- portfolio replication using a subset of instruments from the portfolio (clustering)
+
 
 Capstone Project 2 -- Project Proposal Word document:
 
@@ -98,6 +113,7 @@ Capstone Project 2 -- Project Proposal Word document:
 -- performance is measured by accuracy (i.e., predict a winning stock and it does outperform, or predict a losing stock and it
    does underperform)
    
+
 Capstone Project 2 -- Milestone Report 1 PDF:
 
 -- status update
@@ -105,10 +121,22 @@ Capstone Project 2 -- Milestone Report 1 PDF:
 ---- description of the dataset and how it was obtained, cleaned, and wrangled
 ---- initial findings from EDA
 
+
 Capstone Project 2 -- Milestone Report 2 Word document:
 
 -- status update
 ---- findings from the machine learning phase
+
+
+Capstone Project 2 -- Final Write-Up Word document:
+
+-- end-to-end overview of the project, including conclusions and next steps
+
+
+Capstone Project 2 -- Final Slide Deck:
+
+-- PowerPoint presentation providing a high-level overview of the findings delineated in the final write-up
+
 
 data wrangling notebook:
 
@@ -125,6 +153,7 @@ data wrangling notebook:
 -- Create function that groups by date and discretizes the (continuous) features into 5 quantiles
 -- Create function that discretizes the target -- 1 if the next month's return lies above the median, 0 otherwise
 
+
 EDA notebook:
 
 -- Group the observations by date and compute the mean for all continuous features, then plot the grouped mean for each feature
@@ -135,6 +164,7 @@ EDA notebook:
 -- Subset the discrete target into "underperform" and "outperform," compute each observation's features' quantile average,
    then perform the difference of means test to see if outperforming stocks have features that belong to quantiles that are
    higher than those for underperforming stocks
+
 
 ML notebook:
 
